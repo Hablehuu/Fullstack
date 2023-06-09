@@ -4,6 +4,7 @@ sequenceDiagram
     
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
+    Note server saves the body of the request
     push.(req.body.note,new Date())
     server-->>browser: 302 Redirect /Notes
     deactivate server
